@@ -11,9 +11,8 @@ const Pay = () => {
         const makeRequest = async () => {
             try{
                 const res = await axios.post('http://localhost:8000/api/checkout/payment', {
-                    headers: {
-                        'Authorization': 'sk_test_51NcOxyBxh3T4Cnv2xwfihF4OeMLq4nqqGLWDV68ZUYVNgiFxpLZeK03F4zF74GGfYmZxTUJ2WXzWdpAeOMmvxsRd00LX76nRds'
-                    }
+                    tokenId: stripeToken.id,
+                    amount: 2000,
                 });
                 console.log(res.data)
             }catch (err) {
